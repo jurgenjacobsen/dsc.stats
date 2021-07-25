@@ -1,0 +1,35 @@
+{
+  "name": "dsc.stats",
+  "version": "1.0.0",
+  "description": "A statistics manager using dsc.db",
+  "main": "lib/StatsManager.js",
+  "types": "lib/StatsManager.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jurgenjacobsen/dsc.stats.git"
+  },
+  "keywords": [
+    "stats",
+    "manager",
+    "db",
+    "dsc",
+    "statistics"
+  ],
+  "author": "jurgenjacobsen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jurgenjacobsen/dsc.stats/issues"
+  },
+  "homepage": "https://github.com/jurgenjacobsen/dsc.stats#readme",
+  "devDependencies": {
+    "@types/uuid": "^8.3.1",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "dsc.db": "^1.2.2",
+    "uuid": "^8.3.2"
+  }
+}
