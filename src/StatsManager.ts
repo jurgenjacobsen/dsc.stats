@@ -15,7 +15,7 @@ export class StatsManager extends Base {
 
   public fetch(target: string, days = 0): Promise<User[] | null> {
     return new Promise(async (resolve) => {
-      let raw: Data[] = await this.db.raw({ 'data.id': target});
+      let raw: Data[] = await this.db.raw({ 'data.id': target });
       resolve(
         raw.map((r) => r.data)
         .sort((a: User, b: User) => b.date.getTime() - a.date.getTime())
@@ -44,6 +44,27 @@ export class StatsManager extends Base {
       resolve(res);
     });
   }
+  
+  public graphicRender(target: string, days = 0): Promise<GraphicData | null> {
+    return new Promise(async (resolve) => {
+      let data = await this.fetch(target, days);
+      if(!data) resolve(null);
+      data = (data as User[]).reverse();
+
+      let l: string[] = [];
+      let m: number[] = [];
+      let c: number[] = [];
+      let cmd: number[] = [];
+
+      for(let set of data) {
+        l.push(set.formatedDate);
+        m.push(set.messages);
+        c.push(set.call);
+        cmd.push(set.commands);
+      }
+      resolve({l, m, c, cmd });
+    });
+  }
 }
 
 export interface Options {
@@ -70,4 +91,17 @@ export interface DataSet {
   id: string;
 }
 
+export interface GraphicData {
+  l: string[];
+  m: number[];
+  c: number[];
+  cmd: number[];
+}
+
 export type UserKey = 'messages' | 'commands' | 'call';
+
+const stats = new StatsManager({
+  mongoURL: 'mongodb+srv://jurgen:yyW79dpHoWCGsVpZ@sword.svknu.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-8ynxbq-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true'
+});
+
+stats.graphicRender('292065674338107393').then(console.log);
