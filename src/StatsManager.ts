@@ -44,7 +44,7 @@ export class StatsManager extends Base {
       resolve(res);
     });
   }
-  
+
   public graphicRender(target: string, days = 0): Promise<GraphicData | null> {
     return new Promise(async (resolve) => {
       let data = await this.fetch(target, days);
@@ -99,9 +99,3 @@ export interface GraphicData {
 }
 
 export type UserKey = 'messages' | 'commands' | 'call';
-
-const stats = new StatsManager({
-  mongoURL: 'mongodb+srv://jurgen:yyW79dpHoWCGsVpZ@sword.svknu.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-8ynxbq-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true'
-});
-
-stats.graphicRender('292065674338107393').then(console.log);
