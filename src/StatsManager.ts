@@ -10,6 +10,10 @@ export class StatsManager extends Base {
     this.db = new Database({
       mongoURL: options.mongoURL,
       collection: 'STATS_MANAGER',
+      connectionOptions: {
+        user: options.mongoUser,
+        pass: options.mongoPass,
+      }
     });
   }
 
@@ -68,7 +72,9 @@ export class StatsManager extends Base {
 }
 
 export interface Options {
-  mongoURL: string,
+  mongoURL: string;
+  mongoUser: string;
+  mongoPass: string;
 }
 
 export interface User extends DataSet {
