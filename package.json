@@ -1,6 +1,6 @@
 {
   "name": "dsc.stats",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A statistics manager using dsc.db",
   "main": "lib/StatsManager.js",
   "types": "lib/StatsManager.d.ts",
