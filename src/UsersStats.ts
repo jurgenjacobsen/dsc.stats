@@ -1,7 +1,7 @@
 import { Data, Database } from 'dsc.db';
 import { Base } from './Base';
 
-export class StatsManager extends Base {
+export class UsersStats extends Base {
   public db: Database;
 
   constructor(options: Options) {
@@ -9,11 +9,9 @@ export class StatsManager extends Base {
 
     this.db = new Database({
       mongoURL: options.mongoURL,
-      collection: 'STATS_MANAGER',
-      connectionOptions: {
-        user: options.mongoUser,
-        pass: options.mongoPass,
-      }
+      mongoPass: options.mongoPass,
+      mongoUser: options.mongoUser,
+      collection: 'stats_managers',
     });
   }
 
@@ -54,12 +52,10 @@ export class StatsManager extends Base {
       let data = await this.fetch(target, days);
       if(!data) resolve(null);
       data = (data as User[]).reverse();
-
       let l: string[] = [];
       let m: number[] = [];
       let c: number[] = [];
       let cmd: number[] = [];
-
       for(let set of data) {
         l.push(set.formatedDate);
         m.push(set.messages);
