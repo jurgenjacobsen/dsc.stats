@@ -5,7 +5,8 @@
   "main": "lib/StatsManager.js",
   "types": "lib/StatsManager.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "typedoc": "typedoc --out docs src/"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "homepage": "https://github.com/jurgenjacobsen/dsc.stats#readme",
   "devDependencies": {
     "@types/uuid": "^8.3.1",
+    "typedoc": "^0.21.5",
     "typescript": "^4.3.5"
   },
   "dependencies": {

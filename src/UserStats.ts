@@ -1,7 +1,7 @@
 import { Data, Database } from 'dsc.db';
 import { Base } from './Base';
 
-export class UsersStats extends Base {
+export class UserStats extends Base {
   public db: Database;
 
   constructor(options: Options) {
