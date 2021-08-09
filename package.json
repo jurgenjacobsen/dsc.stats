@@ -6,7 +6,7 @@
   "types": "lib/StatsManager.d.ts",
   "scripts": {
     "build": "tsc",
-    "typedoc": "typedoc --out docs src/"
+    "typedoc": "typedoc --theme minimal --out docs src/"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "dsc.db": "^1.2.2",
+    "dsc.db": "^2.0.1",
     "uuid": "^8.3.2"
   }
 }

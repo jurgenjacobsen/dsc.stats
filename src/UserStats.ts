@@ -17,7 +17,7 @@ export class UserStats extends Base {
 
   public fetch(target: string, days = 0): Promise<User[] | null> {
     return new Promise(async (resolve) => {
-      let raw: Data[] = await this.db.raw({ 'data.id': target });
+      let raw: Data[] = await this.db.schema.find({ 'data.id': target });
       resolve(
         raw.map((r) => r.data)
         .sort((a: User, b: User) => b.date.getTime() - a.date.getTime())
@@ -28,7 +28,7 @@ export class UserStats extends Base {
 
   public update(target: string, key: UserKey, amount: number): Promise<User> {
     return new Promise(async (resolve) => {
-      let _old: Data[] = await this.db.raw({ 'data.id': target, 'data.formatedDate': this.formatDate() });
+      let _old: Data[] = await this.db.schema.find({ 'data.id': target, 'data.formatedDate': this.formatDate() });
       if(_old.length < 1) await this.db.set(this.parseKey(), {
         date: new Date(),
         formatedDate: this.formatDate(),
@@ -38,7 +38,7 @@ export class UserStats extends Base {
         call: 0,
       });
 
-      _old = await this.db.raw({ 'data.id': target, 'data.formatedDate': this.formatDate() });
+      _old = await this.db.schema.find({ 'data.id': target, 'data.formatedDate': this.formatDate() });
       let _key = _old[0].ID;
       let __key = key.toLowerCase();
 
@@ -47,7 +47,7 @@ export class UserStats extends Base {
     });
   }
 
-  public graphicRender(target: string, days = 0): Promise<GraphicData | null> {
+  public graphicRender(target: string, days = 0): Promise<UserGraphicData | null> {
     return new Promise(async (resolve) => {
       let data = await this.fetch(target, days);
       if(!data) resolve(null);
@@ -67,12 +67,6 @@ export class UserStats extends Base {
   }
 }
 
-export interface Options {
-  mongoURL: string;
-  mongoUser: string;
-  mongoPass: string;
-}
-
 export interface User extends DataSet {
   messages: number;
   commands: number;
@@ -83,8 +77,9 @@ export interface Guild extends DataSet {
   messages: number;
   commands: number;
   call: number;
-  join: number;
-  leave: number;
+  joins: number;
+  leaves: number;
+  warns: number;
 }
 
 export interface DataSet {
@@ -93,11 +88,28 @@ export interface DataSet {
   id: string;
 }
 
-export interface GraphicData {
+export interface UserGraphicData {
   l: string[];
   m: number[];
   c: number[];
   cmd: number[];
 }
 
+export interface GuildGraphicData {
+  l: string[];
+  m: number[];
+  cmd: number[];
+  c: number[];
+  j: number[];
+  ls: number[];
+  w: number[];
+}
+
 export type UserKey = 'messages' | 'commands' | 'call';
+export type GuildKey = 'messages' | 'commands' | 'call' | 'joins' | 'leaves' | 'warns';
+
+export interface Options {
+  mongoURL: string;
+  mongoUser: string;
+  mongoPass: string;
+}
