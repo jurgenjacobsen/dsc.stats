@@ -97,6 +97,21 @@ export interface UserGraphicData {
   label: DateFormat[];
 }
 
+export interface GuildGraphicData {
+  /** Messages sent in the guild */
+  messages: number[];
+  /** Commands used in the guild */
+  commands: number[];
+  /** Voice call minutes in the guild */
+  voice: number[];
+  /** How many users joined the guild */
+  newMembers: number[];
+  /** How many users left the guild */
+  leftMembers: number[];
+  /** Formated date to be used as a label */
+  label: DateFormat[];
+}
+
 export type UserKey = 'messages' | 'commands' | 'voice';
 
 /** Guild (Server) data format */
@@ -110,5 +125,7 @@ export interface GuildData extends BaseData {
   /** How many users joined the guild */
   newMembers: number;
   /** How many users left the guild */
-  leftMember: number;
+  leftMembers: number;
 }
+
+export type GuildKey = 'messages' | 'commands' | 'voice' | 'newMembers' | 'leftMembers';

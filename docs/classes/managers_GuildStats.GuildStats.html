@@ -2716,11 +2716,20 @@ img {
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a href="managers_GuildStats.GuildStats.html#options" class="tsd-kind-icon">options</a>
 				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="managers_GuildStats.GuildStats.html#fetch" class="tsd-kind-icon">fetch</a>
+				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="managers_GuildStats.GuildStats.html#formatDate" class="tsd-kind-icon">format<wbr>Date</a>
 				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="managers_GuildStats.GuildStats.html#graphicFormatData" class="tsd-kind-icon">graphic<wbr>Format<wbr>Data</a>
+				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a href="managers_GuildStats.GuildStats.html#parseKey" class="tsd-kind-icon">parse<wbr>Key</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="managers_GuildStats.GuildStats.html#update" class="tsd-kind-icon">update</a>
 				</li>
 			</ul>
 		</li>
@@ -2758,11 +2767,14 @@ img {
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="managers_GuildStats.GuildStats.html#options" class="tsd-kind-icon">options</a></li>
 						</ul>
 					</section>
-					<section class="tsd-index-section tsd-is-inherited">
+					<section class="tsd-index-section ">
 						<h3>Methods</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="managers_GuildStats.GuildStats.html#fetch" class="tsd-kind-icon">fetch</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="managers_GuildStats.GuildStats.html#formatDate" class="tsd-kind-icon">format<wbr>Date</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="managers_GuildStats.GuildStats.html#graphicFormatData" class="tsd-kind-icon">graphic<wbr>Format<wbr>Data</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="managers_GuildStats.GuildStats.html#parseKey" class="tsd-kind-icon">parse<wbr>Key</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="managers_GuildStats.GuildStats.html#update" class="tsd-kind-icon">update</a></li>
 						</ul>
 					</section>
 				</div>
@@ -2781,7 +2793,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Overrides <a href="managers_Base.Base.html">Base</a>.<a href="managers_Base.Base.html#constructor">constructor</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/85414a3/src/managers/GuildStats.ts#L5">managers/GuildStats.ts:5</a></li>
+								<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/14f9641/src/managers/GuildStats.ts#L7">managers/GuildStats.ts:7</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2804,7 +2816,7 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="managers_Base.Base.html">Base</a>.<a href="managers_Base.Base.html#db">db</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/85414a3/src/managers/Base.ts#L7">managers/Base.ts:7</a></li>
+						<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/14f9641/src/managers/Base.ts#L7">managers/Base.ts:7</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2815,13 +2827,51 @@ img {
 				<aside class="tsd-sources">
 					<p>Inherited from <a href="managers_Base.Base.html">Base</a>.<a href="managers_Base.Base.html#options">options</a></p>
 					<ul>
-						<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/85414a3/src/managers/Base.ts#L6">managers/Base.ts:6</a></li>
+						<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/14f9641/src/managers/Base.ts#L6">managers/Base.ts:6</a></li>
 					</ul>
 				</aside>
 			</section>
 		</section>
-		<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Methods</h2>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="fetch" class="tsd-anchor"></a>
+				<h3>fetch</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">fetch<span class="tsd-signature-symbol">(</span>guildID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, days<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/structures_typings.GuildData.html" class="tsd-signature-type" data-tsd-kind="Interface">GuildData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/14f9641/src/managers/GuildStats.ts#L17">managers/GuildStats.ts:17</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Fetches data from a user</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>guildID: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>User&#39;s id that will be fetched</p>
+								</div>
+							</li>
+							<li>
+								<h5>days: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The limit of days to fetch (Optional)</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/structures_typings.GuildData.html" class="tsd-signature-type" data-tsd-kind="Interface">GuildData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<p>Promise&lt;GuildData[] | null&gt;</p>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 				<a name="formatDate" class="tsd-anchor"></a>
 				<h3>format<wbr>Date</h3>
@@ -2833,7 +2883,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="managers_Base.Base.html">Base</a>.<a href="managers_Base.Base.html#formatDate">formatDate</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/85414a3/src/managers/Base.ts#L21">managers/Base.ts:21</a></li>
+								<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/14f9641/src/managers/Base.ts#L21">managers/Base.ts:21</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2843,6 +2893,44 @@ img {
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="graphicFormatData" class="tsd-anchor"></a>
+				<h3>graphic<wbr>Format<wbr>Data</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">graphic<wbr>Format<wbr>Data<span class="tsd-signature-symbol">(</span>userID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, days<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/structures_typings.GuildGraphicData.html" class="tsd-signature-type" data-tsd-kind="Interface">GuildGraphicData</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/14f9641/src/managers/GuildStats.ts#L73">managers/GuildStats.ts:73</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Fetches data from a guild but formated to be used on graphjs.org</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>userID: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Guild&#39;s id that will be fetched</p>
+								</div>
+							</li>
+							<li>
+								<h5>days: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The limit of days to fetch (Optional)</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/structures_typings.GuildGraphicData.html" class="tsd-signature-type" data-tsd-kind="Interface">GuildGraphicData</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						<p>Promise&lt;GuildGraphicData | null&gt;</p>
 					</li>
 				</ul>
 			</section>
@@ -2857,7 +2945,7 @@ img {
 						<aside class="tsd-sources">
 							<p>Inherited from <a href="managers_Base.Base.html">Base</a>.<a href="managers_Base.Base.html#parseKey">parseKey</a></p>
 							<ul>
-								<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/85414a3/src/managers/Base.ts#L17">managers/Base.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/14f9641/src/managers/Base.ts#L17">managers/Base.ts:17</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2870,18 +2958,63 @@ img {
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="update" class="tsd-anchor"></a>
+				<h3>update</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>guildID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, key<span class="tsd-signature-symbol">: </span><a href="../modules/structures_typings.html#GuildKey" class="tsd-signature-type" data-tsd-kind="Type alias">GuildKey</a>, add<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/structures_typings.GuildData.html" class="tsd-signature-type" data-tsd-kind="Interface">GuildData</a><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/jurgenjacobsen/dsc.stats/blob/14f9641/src/managers/GuildStats.ts#L39">managers/GuildStats.ts:39</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Adds a certain amount of counts to that guild data on the date</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>guildID: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Guild id that will be updated</p>
+								</div>
+							</li>
+							<li>
+								<h5>key: <a href="../modules/structures_typings.html#GuildKey" class="tsd-signature-type" data-tsd-kind="Type alias">GuildKey</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Which key will be updated on the guild</p>
+								</div>
+							</li>
+							<li>
+								<h5>add: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The amount that should be added to the key</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/structures_typings.GuildData.html" class="tsd-signature-type" data-tsd-kind="Interface">GuildData</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						<p>Promise&lt;GuildData | null&gt;</p>
+					</li>
+				</ul>
+			</section>
 		</section>
 		<footer class="with-border-bottom">
 			<div class="container">
 				<h2>Legend</h2>
 				<div class="tsd-legend-group">
 					<ul class="tsd-legend">
-						<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-						<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-					</ul>
-					<ul class="tsd-legend">
 						<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 						<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+						<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+						<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 					</ul>
 					<ul class="tsd-legend">
 						<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
