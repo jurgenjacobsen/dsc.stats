@@ -66,8 +66,6 @@ export interface DatabaseOptions {
   user: string;
   /** Your mongodb user pass */
   pass: string;
-  /** Your database collection where all data will be stored */
-  collection: string;
 }
 
 /** Base data format */
@@ -99,7 +97,7 @@ export interface UserGraphicData {
   label: DateFormat[];
 }
 
-export type UserKey = keyof UserData;
+export type UserKey = 'messages' | 'commands' | 'voice';
 
 /** Guild (Server) data format */
 export interface GuildData extends BaseData {

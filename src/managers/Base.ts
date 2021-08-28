@@ -15,7 +15,7 @@ export class Base {
   }
 
   public parseKey(userID?: string): string {
-    return `${uuid}`;
+    return `${uuid()}`;
   }
 
   public formatDate(date: Date = new Date()): string {
