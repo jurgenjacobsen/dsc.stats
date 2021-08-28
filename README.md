@@ -1,24 +1,16 @@
-# dsc.stats
-A very simple library to store user statistics on discord.js
+# [dsc.stats](https://www.npmjs.com/dsc.stats)
 
-`npm i dsc.stats`
+A easy to use statistics package mainly for discord bots.
 
-> **DISCLAIMER** *It's currently under construction, so there will not be many features*
-
-*MongoPass and MongoUser are needed because MongoDB might have problems to connect.*
-```js
-  const bot = new Client(); // YOUR DISCORD CLIENT *EXAMPLE*
-  const { UserStats } = require('dsc.stats');
-  const stats = new UserStats({
-    mongoURL: 'MONGO_URL', 
-    mongoPass: 'MONGO_PASS',
-    mongoUser: 'MONGO_USER',
-  });
-
-  bot.on('messageCreate', (message) => {
-
-    stats.update(message.author.id, 'messages', 1);
-
-  });
+<div style="display: inline-block"><br>
+  <img alt="npm" src="https://img.shields.io/npm/v/dsc.stats?style=flat-square">
+  <img alt="npm" src="https://img.shields.io/npm/dt/dsc.stats?style=flat-square">
+  <img alt="Discord" src="https://img.shields.io/discord/782722663549763585?style=flat-square">
+</div>
+<br>
 
 ```
+npm i dsc.stats
+```
+
+### [Documentation](https://github.com/jurgenjacobsen/dsc.stats/wiki/Documentation)

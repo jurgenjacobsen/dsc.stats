@@ -1,37 +1,40 @@
 {
   "name": "dsc.stats",
-  "version": "2.0.3",
-  "description": "A statistics manager using dsc.db",
-  "main": "lib/UserStats.js",
-  "types": "lib/UserStats.d.ts",
+  "version": "3.0.0-dev.1",
+  "description": "A easy to use statistics package mainly for discord bots",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "typedoc": "typedoc --theme minimal --out docs src/"
+    "tsc": "tsc",
+    "docs": "typedoc --theme minimal --out docs src/",
+    "pretty": "prettier --config .prettierrc \"./src/**/*.ts\"  \"./lib/**/*.js\" --write",
+    "build": "npm run tsc && npm run pretty && npm run docs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jurgenjacobsen/dsc.stats.git"
   },
   "keywords": [
+    "discord",
     "stats",
-    "manager",
-    "db",
-    "dsc",
-    "statistics"
+    "statistics",
+    "dsc"
   ],
   "author": "jurgenjacobsen",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/jurgenjacobsen/dsc.stats/issues"
   },
   "homepage": "https://github.com/jurgenjacobsen/dsc.stats#readme",
-  "devDependencies": {
-    "@types/uuid": "^8.3.1",
-    "typedoc": "^0.21.5",
-    "typescript": "^4.3.5"
+  "engines": {
+    "node": ">=16.6.0",
+    "npm": ">=7.0.0"
   },
   "dependencies": {
-    "dsc.db": "^2.0.1",
+    "dsc.db": "^3.0.4",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.1"
   }
 }
