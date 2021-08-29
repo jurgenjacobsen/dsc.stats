@@ -60,7 +60,7 @@ export class GuildStats extends Base {
       }
       old = (await this.db.fetch({ 'data.id': guildID, 'data.formated': this.formatDate() })) as Data;
       uuid = old.id;
-      let res = await this.db.add(`${uuid}.${key}`, add ?? 1);
+      let res = key !== 'totalMembers' ? await this.db.add(`${uuid}.${key}`, add ?? 1) : await this.db.set(`${uuid}.${key}`, add);
       return resolve(res?.data);
     });
   }
