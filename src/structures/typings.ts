@@ -71,7 +71,7 @@ export interface DatabaseOptions {
 /** Base data format */
 export interface BaseData {
   /** Unique identification */
-  uuid: v4;
+  uuid: string;
   /** User or guild id */
   id: string;
   /** Date of the record */
