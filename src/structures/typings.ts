@@ -108,6 +108,8 @@ export interface GuildGraphicData {
   newMembers: number[];
   /** How many users left the guild */
   leftMembers: number[];
+  /** What was the maximum guild's members number */
+  totalMembers: number[];
   /** Formated date to be used as a label */
   label: DateFormat[];
 }
@@ -126,6 +128,8 @@ export interface GuildData extends BaseData {
   newMembers: number;
   /** How many users left the guild */
   leftMembers: number;
+  /** What was the maximum guild's members number */
+  totalMembers: number;
 }
 
 export type GuildKey = 'messages' | 'commands' | 'voice' | 'newMembers' | 'leftMembers';

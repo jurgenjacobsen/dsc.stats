@@ -55,6 +55,7 @@ export class GuildStats extends Base {
           voice: 0,
           newMembers: 0,
           leftMembers: 0,
+          totalMembers: 0,
         } as GuildData);
       }
       old = (await this.db.fetch({ 'data.id': guildID, 'data.formated': this.formatDate() })) as Data;
@@ -77,13 +78,14 @@ export class GuildStats extends Base {
       let raw = await this.fetch(userID, days);
       if (!raw) return resolve(null);
       raw = raw.reverse();
-      let data: GuildGraphicData = { messages: [], commands: [], voice: [], label: [], newMembers: [], leftMembers: [] };
+      let data: GuildGraphicData = { messages: [], commands: [], voice: [], label: [], newMembers: [], leftMembers: [], totalMembers: [] };
       for (let r of raw) {
         data.messages.push(r.messages ?? 0);
         data.commands.push(r.commands ?? 0);
         data.voice.push(r.voice ?? 0);
         data.newMembers.push(r.newMembers ?? 0);
         data.leftMembers.push(r.leftMembers ?? 0);
+        data.totalMembers.push(r.totalMembers ?? 0);
         data.label.push(r.formated ?? this.formatDate(r.date));
       }
       return resolve(data);
