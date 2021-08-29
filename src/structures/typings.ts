@@ -132,4 +132,4 @@ export interface GuildData extends BaseData {
   totalMembers: number;
 }
 
-export type GuildKey = 'messages' | 'commands' | 'voice' | 'newMembers' | 'leftMembers';
+export type GuildKey = 'messages' | 'commands' | 'voice' | 'newMembers' | 'leftMembers' | 'totalMembers';
